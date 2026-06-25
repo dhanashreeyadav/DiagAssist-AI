@@ -1,0 +1,573 @@
+[
+  {
+    "code": "P0011",
+    "description": "Camshaft Position Timing Over-Advanced or System Performance (Bank 1). The camshaft position is advancing too much relative to the crankshaft, often caused by a faulty variable valve timing solenoid, timing chain stretch, or oil control valve blockage.",
+    "severity": "Medium",
+    "estimated_time": "2.5 Hours",
+    "repair_steps": [
+      "Check engine oil level and condition",
+      "Inspect camshaft position sensor for proper operation",
+      "Test variable valve timing (VVT) solenoid with a scan tool",
+      "Check timing chain tension and condition",
+      "Clean or replace oil control valve if necessary",
+      "Clear code and verify proper VVT operation at idle and load"
+    ]
+  },
+  {
+    "code": "P0016",
+    "description": "Crankshaft/Camshaft Position Synchronization Error. The engine control module has detected that the crankshaft and camshaft positions are not synchronized, commonly due to timing chain stretch, broken timing chain, or jumped timing.",
+    "severity": "High",
+    "estimated_time": "4 Hours",
+    "repair_steps": [
+      "Verify crankshaft and camshaft position sensor readings with a scan tool",
+      "Inspect timing chain for stretch or damage",
+      "Check for broken or jumped timing chain teeth",
+      "Verify crankshaft and camshaft sensor alignment",
+      "Replace timing chain and components if necessary",
+      "Clear code and confirm timing synchronization"
+    ]
+  },
+  {
+    "code": "P0030",
+    "description": "Heated Oxygen Sensor Control Circuit (Bank 1, Sensor 1). The oxygen sensor heater circuit is not functioning correctly, preventing the sensor from reaching operating temperature quickly.",
+    "severity": "Medium",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Inspect oxygen sensor heater wiring and connector for damage or corrosion",
+      "Test oxygen sensor heater resistance against specifications",
+      "Check heater relay and fuse continuity",
+      "Replace oxygen sensor if heater element is faulty",
+      "Clear code and verify heater operation with infrared thermometer"
+    ]
+  },
+  {
+    "code": "P0031",
+    "description": "Heated Oxygen Sensor Heater Circuit Low (Bank 1, Sensor 1). The oxygen sensor heater element is drawing insufficient current, indicating a problem in the heater circuit.",
+    "severity": "Medium",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Check oxygen sensor heater wiring for breaks or loose connections",
+      "Test heater circuit voltage supply",
+      "Measure heater resistance and compare to specifications",
+      "Inspect heater relay contacts for arcing or corrosion",
+      "Replace oxygen sensor or repair wiring as needed",
+      "Clear code and verify heater draws proper current"
+    ]
+  },
+  {
+    "code": "P0036",
+    "description": "Heated Oxygen Sensor Heater Circuit (Bank 1, Sensor 2). The downstream oxygen sensor heater is not functioning correctly, affecting the secondary exhaust monitoring system.",
+    "severity": "Low",
+    "estimated_time": "1 Hour",
+    "repair_steps": [
+      "Inspect downstream oxygen sensor heater connector and wiring",
+      "Test heater circuit voltage and ground continuity",
+      "Check heater element resistance with a multimeter",
+      "Replace oxygen sensor if heater is defective",
+      "Clear code and verify proper heater operation"
+    ]
+  },
+  {
+    "code": "P0050",
+    "description": "Heated Oxygen Sensor Control Circuit (Bank 2, Sensor 1). The oxygen sensor heater on bank 2 (opposite of primary ignition) is not functioning properly.",
+    "severity": "Medium",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Locate bank 2 oxygen sensor (opposite side of engine)",
+      "Inspect heater circuit wiring and connector integrity",
+      "Test heater power supply and ground connections",
+      "Measure heater element resistance",
+      "Replace oxygen sensor if internal heater is faulty",
+      "Clear code and verify heater operation"
+    ]
+  },
+  {
+    "code": "P0100",
+    "description": "Mass Air Flow (MAF) Sensor Circuit Malfunction. The MAF sensor is detecting a problem in its circuit, preventing accurate air intake measurement for fuel calculation.",
+    "severity": "High",
+    "estimated_time": "1 Hour",
+    "repair_steps": [
+      "Inspect MAF sensor connector for corrosion or loose pins",
+      "Check wiring harness for damage between sensor and ECM",
+      "Verify power and ground supply to the MAF sensor",
+      "Clean MAF sensor carefully with MAF-safe solvent or replace",
+      "Clear code and verify normal air flow readings at idle"
+    ]
+  },
+  {
+    "code": "P0102",
+    "description": "Mass Air Flow Sensor Circuit Low Input. The MAF sensor is reporting a lower air flow than expected for current operating conditions.",
+    "severity": "Medium",
+    "estimated_time": "1 Hour",
+    "repair_steps": [
+      "Inspect air intake for restriction or blockage",
+      "Clean or replace air filter if restricted",
+      "Check MAF sensor for dirt, oil contamination, or damage",
+      "Verify intake manifold gasket integrity",
+      "Test MAF sensor signal voltage with engine running at idle",
+      "Replace MAF sensor if faulty"
+    ]
+  },
+  {
+    "code": "P0103",
+    "description": "Mass Air Flow Sensor Circuit High Input. The MAF sensor is reporting higher air flow than expected, often due to a vacuum leak or sensor malfunction.",
+    "severity": "Medium",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Inspect all vacuum hoses for cracks or disconnection",
+      "Check intake manifold gaskets for leaks",
+      "Verify PCV system operation",
+      "Test MAF sensor signal at idle and under load",
+      "Clean MAF sensor or replace if reading remains high",
+      "Clear code and verify normal air flow measurement"
+    ]
+  },
+  {
+    "code": "P0106",
+    "description": "Manifold Absolute Pressure/Barometric Pressure Problem. The MAP sensor reading is outside the expected range or not correlating properly with engine load.",
+    "severity": "Medium",
+    "estimated_time": "1 Hour",
+    "repair_steps": [
+      "Inspect MAP sensor hose for cracks, leaks, or blockage",
+      "Check sensor connector for corrosion or loose pins",
+      "Test MAP sensor voltage output with engine off and running",
+      "Verify vacuum line is properly routed from manifold",
+      "Clean or replace MAP sensor if faulty",
+      "Clear code and confirm sensor reads barometric pressure at startup"
+    ]
+  },
+  {
+    "code": "P0110",
+    "description": "Intake Air Temperature (IAT) Sensor Circuit Malfunction. The IAT sensor is not providing valid input to the engine control module.",
+    "severity": "Low",
+    "estimated_time": "0.75 Hours",
+    "repair_steps": [
+      "Inspect IAT sensor connector and wiring for damage",
+      "Check sensor power and ground circuits",
+      "Test sensor resistance at various temperatures",
+      "Verify sensor reading correlates with ambient temperature",
+      "Replace IAT sensor if out of specification",
+      "Clear code and confirm normal temperature tracking"
+    ]
+  },
+  {
+    "code": "P0112",
+    "description": "Intake Air Temperature Sensor Circuit Low Input. The IAT sensor is reporting a lower temperature than physically present, indicating sensor or circuit failure.",
+    "severity": "Low",
+    "estimated_time": "0.75 Hours",
+    "repair_steps": [
+      "Inspect IAT sensor wiring for shorts to ground",
+      "Check sensor connector contacts for corrosion",
+      "Test sensor resistance with multimeter",
+      "Verify power supply voltage to sensor",
+      "Replace IAT sensor if resistance is out of range",
+      "Clear code and verify normal reading at engine start"
+    ]
+  },
+  {
+    "code": "P0115",
+    "description": "Engine Coolant Temperature Sensor Circuit Malfunction. The coolant temperature sensor is not providing valid input for engine temperature control.",
+    "severity": "Medium",
+    "estimated_time": "1 Hour",
+    "repair_steps": [
+      "Verify coolant level is adequate",
+      "Inspect temperature sensor connector and wiring",
+      "Check power supply and ground to the sensor",
+      "Test sensor resistance at engine warm-up",
+      "Replace coolant temperature sensor if faulty",
+      "Clear code and confirm proper temperature gauge operation"
+    ]
+  },
+  {
+    "code": "P0116",
+    "description": "Engine Coolant Temperature Sensor Range/Performance Problem. The engine is taking longer than expected to reach operating temperature.",
+    "severity": "Low",
+    "estimated_time": "1 Hour",
+    "repair_steps": [
+      "Allow engine to fully warm up and monitor temperature gauge",
+      "Compare coolant temperature sensor reading to actual temperature",
+      "Check for low coolant level or incorrect coolant type",
+      "Inspect thermostat operation and housing",
+      "Replace thermostat if stuck open",
+      "Clear code and verify warm-up curve returns to normal"
+    ]
+  },
+  {
+    "code": "P0117",
+    "description": "Engine Coolant Temperature Sensor Circuit Low Input. The coolant temperature sensor is reporting lower voltage than expected.",
+    "severity": "Low",
+    "estimated_time": "0.75 Hours",
+    "repair_steps": [
+      "Inspect temperature sensor connector for corrosion",
+      "Check wiring for damage or short circuits",
+      "Test sensor resistance in hot and cold conditions",
+      "Verify proper sensor contact in thermostat housing",
+      "Replace coolant temperature sensor if resistance out of spec",
+      "Clear code and confirm normal temperature reading"
+    ]
+  },
+  {
+    "code": "P0118",
+    "description": "Engine Coolant Temperature Sensor Circuit High Input. The coolant temperature sensor is reporting higher voltage than expected.",
+    "severity": "Low",
+    "estimated_time": "0.75 Hours",
+    "repair_steps": [
+      "Check for sensor wiring open circuits or breaks",
+      "Inspect sensor connector for loose or missing pins",
+      "Test sensor resistance value against specifications",
+      "Verify ground connection integrity",
+      "Replace coolant temperature sensor if faulty",
+      "Clear code and confirm proper temperature readings"
+    ]
+  },
+  {
+    "code": "P0120",
+    "description": "Throttle Pedal Position Sensor/Switch Circuit. The throttle position sensor is not providing consistent input for engine load calculation.",
+    "severity": "High",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Inspect throttle position sensor connector and wiring",
+      "Test sensor voltage throughout pedal range",
+      "Check for binding in throttle cable or electronic throttle control",
+      "Verify power supply and ground to sensor",
+      "Replace throttle position sensor if voltage out of range",
+      "Clear code and calibrate electronic throttle control if equipped"
+    ]
+  },
+  {
+    "code": "P0131",
+    "description": "Oxygen Sensor Circuit No Activity (Bank 1, Sensor 1). The upstream oxygen sensor is not responding to engine operating changes.",
+    "severity": "Medium",
+    "estimated_time": "1 Hour",
+    "repair_steps": [
+      "Verify oxygen sensor is fully heated and responding",
+      "Inspect sensor connector for loose or damaged pins",
+      "Check wiring harness for breaks or corrosion",
+      "Test sensor voltage output under load",
+      "Replace oxygen sensor if not responding to fuel trim changes",
+      "Clear code and verify sensor voltage fluctuates at idle"
+    ]
+  },
+  {
+    "code": "P0132",
+    "description": "Oxygen Sensor Circuit No Activity (Bank 1, Sensor 2). The downstream oxygen sensor is not responding to engine changes or catalyst function.",
+    "severity": "Low",
+    "estimated_time": "1 Hour",
+    "repair_steps": [
+      "Ensure downstream oxygen sensor heater has reached operating temperature",
+      "Inspect sensor connector and wiring for damage",
+      "Check power and ground supply to sensor",
+      "Test sensor output voltage for activity",
+      "Replace oxygen sensor if heater or sensor element is faulty",
+      "Clear code and verify sensor responds to engine transients"
+    ]
+  },
+  {
+    "code": "P0133",
+    "description": "Oxygen Sensor Circuit Slow Response (Bank 1, Sensor 1). The upstream oxygen sensor is responding too slowly to fuel mixture changes.",
+    "severity": "Medium",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Check exhaust for leaks upstream of oxygen sensor",
+      "Verify oxygen sensor is fully heated and aged",
+      "Inspect sensor for carbon buildup or contamination",
+      "Test sensor response time with a lab scope if available",
+      "Replace oxygen sensor if response time exceeds specifications",
+      "Clear code and confirm normal sensor response at idle"
+    ]
+  },
+  {
+    "code": "P0134",
+    "description": "Oxygen Sensor Circuit No Activity (Bank 1). The primary oxygen sensor bank is showing insufficient electrical activity.",
+    "severity": "Medium",
+    "estimated_time": "1 Hour",
+    "repair_steps": [
+      "Check oxygen sensor heater circuit operation",
+      "Inspect sensor connector for corrosion or water intrusion",
+      "Verify oxygen sensor is properly installed and grounded",
+      "Test heater and sensor element with multimeter",
+      "Replace oxygen sensor if heater or element is open",
+      "Clear code and verify sensor voltage activity at idle"
+    ]
+  },
+  {
+    "code": "P0135",
+    "description": "Oxygen Sensor Heater Circuit (Bank 1, Sensor 1). The upstream oxygen sensor heater is not functioning correctly.",
+    "severity": "Medium",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Check oxygen sensor heater fuse and relay",
+      "Inspect heater circuit wiring for breaks or loose connections",
+      "Test heater power supply voltage",
+      "Measure heater element resistance with multimeter",
+      "Replace oxygen sensor if heater element is open or shorted",
+      "Clear code and verify heater draws current when powered"
+    ]
+  },
+  {
+    "code": "P0141",
+    "description": "Oxygen Sensor Heater Circuit (Bank 1, Sensor 2). The downstream oxygen sensor heater is not responding to control commands.",
+    "severity": "Low",
+    "estimated_time": "1 Hour",
+    "repair_steps": [
+      "Locate downstream oxygen sensor (after catalytic converter)",
+      "Inspect heater connector and wiring for damage",
+      "Test heater circuit voltage supply",
+      "Check heater element resistance",
+      "Replace oxygen sensor if heater is faulty",
+      "Clear code and verify heater operates when engine starts"
+    ]
+  },
+  {
+    "code": "P0147",
+    "description": "Fuel Injector Circuit (Bank 1). One or more fuel injectors on bank 1 are not functioning properly.",
+    "severity": "High",
+    "estimated_time": "2 Hours",
+    "repair_steps": [
+      "Check fuel injector wiring and connectors",
+      "Test injector coil resistance against specifications",
+      "Verify injector control signal from engine control module",
+      "Check fuel pressure to confirm adequate supply",
+      "Clean fuel injectors with fuel system cleaner or replace",
+      "Clear code and verify fuel injector pulse at idle"
+    ]
+  },
+  {
+    "code": "P0150",
+    "description": "Fuel Injector Circuit (Bank 2). The fuel injection system on bank 2 (opposite side) is not functioning correctly.",
+    "severity": "High",
+    "estimated_time": "2 Hours",
+    "repair_steps": [
+      "Locate bank 2 fuel injectors (opposite side of primary)",
+      "Inspect fuel injector wiring and connectors",
+      "Test injector coil resistance and control signals",
+      "Verify fuel pressure supply to bank 2 injectors",
+      "Clean or replace faulty fuel injectors",
+      "Clear code and confirm injection pulse at idle and load"
+    ]
+  },
+  {
+    "code": "P0170",
+    "description": "Fuel Trim System Too Rich (Bank 1). The engine control module has detected that bank 1 is running richer than target after all correction attempts.",
+    "severity": "Medium",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Check for vacuum leaks in intake system",
+      "Verify oxygen sensor operation and heater function",
+      "Inspect fuel pressure regulator for proper operation",
+      "Test fuel injector spray pattern and flow rate",
+      "Check air mass flow sensor for contamination",
+      "Clear code and verify fuel trims return to acceptable range"
+    ]
+  },
+  {
+    "code": "P0172",
+    "description": "System Too Rich (Bank 1). The engine is running too rich (excess fuel), commonly caused by a faulty oxygen sensor, fuel pressure regulator, or defective fuel injector.",
+    "severity": "Medium",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Verify oxygen sensor heater is functioning",
+      "Check fuel pressure and compare to specifications",
+      "Inspect fuel pressure regulator for vacuum leak or stuck plunger",
+      "Test fuel injector resistance and flow rate",
+      "Check mass airflow sensor for proper operation",
+      "Clear code and verify rich condition has improved"
+    ]
+  },
+  {
+    "code": "P0174",
+    "description": "System Too Lean (Bank 2). The engine is running too lean on bank 2, often due to vacuum leaks, weak fuel pump, or mass airflow sensor issue.",
+    "severity": "Medium",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Perform smoke test for vacuum leaks",
+      "Check fuel pressure and pump operation",
+      "Inspect mass airflow sensor for contamination",
+      "Test oxygen sensor heater and sensor response",
+      "Verify fuel injectors are not restricted",
+      "Clear code and confirm lean condition is resolved"
+    ]
+  },
+  {
+    "code": "P0175",
+    "description": "System Too Rich (Bank 2). Bank 2 of the engine is operating with an excessive fuel to air ratio.",
+    "severity": "Medium",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Verify bank 2 oxygen sensor operation",
+      "Check fuel pressure at bank 2 fuel rail",
+      "Inspect fuel pressure regulator for leaks or malfunction",
+      "Test bank 2 fuel injectors for proper flow",
+      "Verify air intake is not restricted on bank 2 side",
+      "Clear code and monitor fuel trims for bank 2"
+    ]
+  },
+  {
+    "code": "P0180",
+    "description": "Fuel Temperature Sensor Circuit. The fuel temperature sensor is not providing valid input to the engine control module.",
+    "severity": "Low",
+    "estimated_time": "1 Hour",
+    "repair_steps": [
+      "Inspect fuel temperature sensor connector and wiring",
+      "Check power supply and ground to the sensor",
+      "Test sensor resistance at various fuel temperatures",
+      "Verify sensor location is in fuel line or fuel rail",
+      "Replace fuel temperature sensor if out of specification",
+      "Clear code and confirm normal sensor operation"
+    ]
+  },
+  {
+    "code": "P0190",
+    "description": "Fuel Rail Pressure Sensor Circuit. The fuel pressure sensor is not functioning correctly, preventing accurate fuel delivery control.",
+    "severity": "High",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Inspect fuel pressure sensor connector and wiring",
+      "Check sensor power supply and ground",
+      "Test sensor output voltage at various engine loads",
+      "Verify fuel pressure is within normal range",
+      "Replace fuel pressure sensor if signal is out of range",
+      "Clear code and confirm proper fuel pressure control"
+    ]
+  },
+  {
+    "code": "P0191",
+    "description": "Fuel Rail Pressure Sensor Range/Performance. The fuel rail pressure reading is not matching expected values for current operating conditions.",
+    "severity": "Medium",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Verify fuel pump operation and delivery volume",
+      "Check fuel filter for restriction or blockage",
+      "Test fuel pressure sensor output voltage under load",
+      "Inspect fuel pressure regulator for proper operation",
+      "Check fuel rail for pressure leaks",
+      "Replace fuel pressure sensor if readings remain inconsistent"
+    ]
+  },
+  {
+    "code": "P0192",
+    "description": "Fuel Rail Pressure Sensor Low Input. The fuel rail pressure is lower than expected or the sensor is reporting low voltage.",
+    "severity": "High",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Check fuel pump operation and output",
+      "Inspect fuel filter condition and flow rate",
+      "Test fuel pressure sensor voltage output",
+      "Verify fuel pressure regulator is not stuck closed",
+      "Check for fuel leaks in fuel rail or lines",
+      "Replace fuel pump or sensor if pressure remains low"
+    ]
+  },
+  {
+    "code": "P0193",
+    "description": "Fuel Rail Pressure Sensor High Input. The fuel pressure sensor is reporting higher than normal pressure or sensor output voltage is too high.",
+    "severity": "Medium",
+    "estimated_time": "1 Hour",
+    "repair_steps": [
+      "Check fuel pressure against specification with manual gauge",
+      "Inspect fuel pressure regulator for stuck or leaking valve",
+      "Test fuel pressure sensor voltage with multimeter",
+      "Verify fuel return line is not restricted or blocked",
+      "Check for fuel leaks in fuel rail connections",
+      "Replace fuel pressure sensor or regulator as needed"
+    ]
+  },
+  {
+    "code": "P0200",
+    "description": "Injector Circuit Malfunction. The engine control module has detected a problem in the fuel injector circuit.",
+    "severity": "High",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Check fuel injector wiring harness for damage or corrosion",
+      "Test injector coil resistance on all cylinders",
+      "Verify injector control signal from engine control module",
+      "Check fuel pressure supply to injectors",
+      "Test injectors individually for proper spray pattern",
+      "Replace faulty fuel injectors and clear code"
+    ]
+  },
+  {
+    "code": "P0201",
+    "description": "Cylinder 1 Injector Circuit. The fuel injector for cylinder 1 is not functioning correctly.",
+    "severity": "High",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Inspect cylinder 1 injector connector and wiring",
+      "Test injector coil resistance against specifications",
+      "Verify injector control signal from ECM",
+      "Check fuel pressure supply to cylinder 1",
+      "Test injector spray pattern under fuel pressure",
+      "Replace cylinder 1 injector if faulty"
+    ]
+  },
+  {
+    "code": "P0202",
+    "description": "Cylinder 2 Injector Circuit. The fuel injector for cylinder 2 is not responding properly.",
+    "severity": "High",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Locate cylinder 2 and inspect injector connector",
+      "Test injector resistance and control signal",
+      "Verify fuel pressure reaches cylinder 2 injector",
+      "Check wiring for breaks or short circuits",
+      "Test injector spray pattern and flow rate",
+      "Replace cylinder 2 injector if defective"
+    ]
+  },
+  {
+    "code": "P0203",
+    "description": "Cylinder 3 Injector Circuit. The fuel injector serving cylinder 3 is malfunctioning.",
+    "severity": "High",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Identify cylinder 3 location on the engine",
+      "Inspect injector connector for corrosion or damage",
+      "Test injector coil resistance and control signal",
+      "Verify fuel pressure supply to the injector",
+      "Check wiring harness for breaks or loose connections",
+      "Replace cylinder 3 injector if resistance out of spec"
+    ]
+  },
+  {
+    "code": "P0204",
+    "description": "Cylinder 4 Injector Circuit. The fuel injector for cylinder 4 is not operating correctly.",
+    "severity": "High",
+    "estimated_time": "1.5 Hours",
+    "repair_steps": [
+      "Locate cylinder 4 fuel injector on engine",
+      "Inspect injector and connector for damage",
+      "Test injector resistance with multimeter",
+      "Verify ECM control signal to the injector",
+      "Check fuel pressure and return flow",
+      "Replace cylinder 4 injector if coil resistance is open or shorted"
+    ]
+  },
+  {
+    "code": "P0217",
+    "description": "Engine Overtemperature Condition. The engine coolant temperature has exceeded safe operating limits.",
+    "severity": "Critical",
+    "estimated_time": "2 Hours",
+    "repair_steps": [
+      "Stop the engine immediately and allow to cool",
+      "Check coolant level and condition when engine is cool",
+      "Inspect radiator for blockage or collapsed cooling fins",
+      "Test thermostat and water pump operation",
+      "Check cooling fan motor and clutch operation",
+      "Verify temperature sensor is not faulty and replace if needed"
+    ]
+  },
+  {
+    "code": "P0220",
+    "description": "Throttle/Pedal Position Switch (B) Circuit. The secondary throttle position sensor is not providing consistent input.",
+    "severity": "High",
+    "estimated_time": "1 Hour",
+    "repair_steps": [
+      "Locate throttle position sensor B on throttle body",
+      "Inspect connector and wiring for damage",
+      "Test sensor voltage output through full throttle range",
+      "Check power supply and ground connections",
+      "Verify sensor is properly aligned with throttle shaft",
+      "Replace throttle position sensor if voltage out of range"
+    ]
+  }
+]

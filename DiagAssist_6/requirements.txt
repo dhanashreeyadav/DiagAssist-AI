@@ -1,0 +1,15 @@
+mcp>=1.0.0
+
+# Optional: only needed for agent_adk.py (real ADK Agent + FunctionTool).
+# agent.py / main.py work fully offline without this.
+google-adk>=1.0.0
+
+# Day 5: A2A demonstration (Parts Agent server + client).
+fastapi>=0.110.0
+uvicorn>=0.29.0
+httpx>=0.27.0
+
+# Optional: only needed for the web UI (streamlit_app.py).
+# main.py (CLI) does not require these.
+streamlit>=1.38.0
+reportlab>=4.0.0
