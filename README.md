@@ -1,45 +1,87 @@
-# DiagAssist – Autonomous Automotive Repair Planner
+# 🚗 DiagAssist – Autonomous Automotive Repair Planner
 
-DiagAssist is an AI-powered diagnostic assistant that takes a vehicle Diagnostic
-Trouble Code (DTC), retrieves grounded repair information through an MCP Server,
-reasons about the fault using an Agent Skill, and returns a structured repair plan
-through an A2UI-style interface (Repair Card + Checklist + Status Badge).
+> **Google ADK • Gemini • MCP • A2A • Streamlit • SQLite • Vertex AI**
 
-Built for a Business AI Agent Hackathon to demonstrate MCP integration, Agent
-Skills, an ADK-style agent framework, A2UI rendering, and evaluation-driven
-development — all running fully locally with no cloud dependencies.
+DiagAssist is an autonomous automotive diagnostic and repair planning assistant that transforms **Diagnostic Trouble Codes (DTCs)** into grounded, explainable repair plans using **Google Agent Development Kit (ADK)**, **Gemini**, **Model Context Protocol (MCP)**, and a structured automotive knowledge base.
 
-## Features
+Unlike conventional diagnostic tools that only display fault codes, DiagAssist reasons over technician queries, autonomously invokes diagnostic tools, retrieves verified repair knowledge, coordinates with external agents, and generates structured repair recommendations through an interactive Streamlit dashboard.
 
-- 🔍 **Grounded diagnosis** — every fact in a response comes directly from a
-  local SQLite database via the `lookup_dtc` MCP tool. No hallucinated repair steps.
-- 🧠 **Agent Skill** — a documented `SKILL.md` defines exactly when to use the
-  tool, when to refuse, and how to handle multiple or invalid codes.
-- 🔌 **MCP Server** — a standalone server exposing `lookup_dtc` over stdio,
-  usable by any MCP-compatible agent framework.
-- 🖥️ **A2UI rendering** — structured agent output is rendered as a Repair Card
-  with a color-coded severity badge and a repair checklist.
-- ✅ **Evaluation-driven development** — an automated `evals.py` suite checks
-  valid codes, natural-language questions, refusals, invalid codes, and
-  multi-code requests.
+The system supports two execution modes:
 
-## Architecture
+* **Google ADK + Gemini Mode** – AI-powered reasoning with tool calling and natural-language explanations.
+* **Offline Diagnostic Mode** – Rule-based fallback that ensures uninterrupted operation when cloud services are unavailable.
 
-```mermaid
-flowchart TD
-    U[User] --> A[ADK Agent]
-    A --> S[Agent Skill: diagnostic-troubleshooting]
-    S --> M[MCP Server: lookup_dtc]
-    M --> D[(SQLite Database)]
-    D --> M
-    M --> S
-    S --> A
-    A --> UI[A2UI Renderer]
-    UI --> U
+Developed as part of the **Google AI Agent Development Kit Capstone**, the project demonstrates real-world enterprise agent architecture using ADK, MCP, A2A communication, observability, memory, and grounded tool execution.
+
+---
+
+## ✨ Features
+
+* 🤖 Google Agent Development Kit (ADK) powered diagnostic agent
+* 🧠 Gemini-powered reasoning with autonomous Function Tool calling
+* 🔌 Model Context Protocol (MCP) server exposing automotive diagnostic tools
+* 🚗 SQLite knowledge base containing automotive Diagnostic Trouble Codes (DTCs)
+* 💬 Interactive Streamlit dashboard for technician-friendly diagnostics
+* 📄 PDF repair report generation
+* 🧠 Short-term conversation memory and persistent diagnostic history
+* 🔍 Grounded responses using verified repair data (no hallucinated repair steps)
+* 📊 Observability with tool-call tracing and diagnostic metrics
+* 🤝 A2A (Agent-to-Agent) communication for external Parts Agent integration
+* ☁ Vertex AI authentication support using Application Default Credentials (ADC)
+* 🔄 Automatic Offline Diagnostic Engine fallback when Gemini is unavailable
+* 📈 Easily extensible DTC database supporting additional manufacturer codes
+
+---
+
+## Why AI Agents?
+
+Traditional vehicle diagnostic tools simply display fault codes and leave technicians to search service manuals manually.
+
+DiagAssist demonstrates how autonomous AI agents can significantly improve this workflow by:
+
+* Understanding natural-language technician requests
+* Deciding when diagnostic tools should be invoked
+* Retrieving grounded repair knowledge
+* Maintaining conversational context across multiple interactions
+* Coordinating with external agents using the A2A protocol
+* Producing explainable repair recommendations instead of raw data
+
+This project showcases how Google ADK enables enterprise-grade intelligent agents that combine reasoning, memory, tool use, and structured workflows.
+
+---
+
+## System Architecture
+
+```text
+                       User
+                         │
+                         ▼
+                 Streamlit Dashboard
+                         │
+                         ▼
+               Google ADK Diagnostic Agent
+                         │
+      ┌──────────────────┼───────────────────┐
+      │                  │                   │
+      ▼                  ▼                   ▼
+   Gemini AI        MCP Function Tool     Memory
+      │                  │                   │
+      ▼                  ▼                   ▼
+ Tool Reasoning     SQLite DTC DB      Conversation History
+      │
+      ▼
+  Observability + Logging
+      │
+      ▼
+ Optional Parts Agent (A2A)
+      │
+      ▼
+ Repair Report + PDF Export
 ```
 
-See `specs/technical_design.md` for the full design document, data flow,
-risks, and mitigations.
+See `specs/technical_design.md` for the full design document, data flow, risks, and mitigations.
+
+---
 
 ## Repository Structure
 
@@ -62,34 +104,38 @@ DiagAssist/
 ├── tests/
 │   └── evals.py
 ├── agent.py
+├── agent_adk.py               (Google ADK integration)
 ├── main.py
+├── streamlit_app.py           (Interactive web UI)
 ├── README.md
 ├── requirements.txt
 └── pitch.md
 ```
 
+---
+
 ## Setup Instructions
 
-### 1. Clone / unzip the project
+### 1. Clone / Extract the Project
 
 ```bash
 cd DiagAssist
 ```
 
-### 2. Create a virtual environment (recommended)
+### 2. Create a Virtual Environment (Recommended)
 
 ```bash
 python -m venv venv
 source venv/bin/activate   # on Windows: venv\Scripts\activate
 ```
 
-### 3. Install dependencies
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Build the local database
+### 4. Build the Local Database
 
 ```bash
 cd database
@@ -99,7 +145,28 @@ cd ..
 
 This reads `database/dtc_data.json` and creates `database/dtc_database.db`.
 
-## Running the MCP Server
+---
+
+## Live Demonstration
+
+### Streamlit Dashboard (Recommended)
+
+Launch the interactive Streamlit interface:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Users can:
+
+* Enter Diagnostic Trouble Codes
+* Ask automotive repair questions
+* Receive AI-generated repair plans
+* View grounded diagnostic explanations
+* Export professional repair reports as PDF
+* Observe automatic switching between ADK and Offline modes
+
+### Running the MCP Server
 
 The MCP server can be run standalone (useful for testing with any MCP client,
 or wiring into a different agent framework):
@@ -111,7 +178,7 @@ python mcp_server.py
 
 It communicates over stdio and exposes one tool: `lookup_dtc(code: str)`.
 
-## Running the Agent
+### Running the Agent (CLI)
 
 For the full interactive experience (agent + A2UI rendering together):
 
@@ -145,6 +212,24 @@ You can also run the agent without the UI layer:
 python agent.py
 ```
 
+---
+
+## Technology Stack
+
+| Category             | Technology          | Purpose                           |
+| -------------------- | ------------------- | --------------------------------- |
+| AI Agent Framework   | Google ADK          | Agent orchestration               |
+| Large Language Model | Gemini              | Natural language reasoning        |
+| Agent Communication  | MCP, A2A            | Tool definitions & multi-agent    |
+| Frontend             | Streamlit           | Interactive web dashboard         |
+| Database             | SQLite              | Automotive DTC knowledge base     |
+| Programming Language | Python              | Core implementation               |
+| Authentication       | Vertex AI ADC       | Secure credential management      |
+| Reporting            | ReportLab           | PDF generation                    |
+| Logging              | JSONL Observability | Tool call tracing & metrics       |
+
+---
+
 ## Running Evaluations
 
 ```bash
@@ -155,6 +240,8 @@ This runs 7 automated test cases (valid code, natural-language question,
 off-topic refusal, invalid code, multiple codes, malformed code handling,
 and a memory follow-up test) and prints a pass/fail report. The script
 exits with a non-zero status if any test fails, so it can be wired into CI.
+
+---
 
 ## Sessions & Memory (Day 3)
 
@@ -171,6 +258,8 @@ python main.py
 > P0420
 > how serious is that?
 ```
+
+---
 
 ## Observability & Grounding Evaluation (Day 4)
 
@@ -189,11 +278,25 @@ python judge.py            # checks that responses are faithfully grounded
   LLM-as-Judge evaluation of clarity/tone (requires a Gemini API key to
   actually execute — see `agent_adk.py`).
 
+---
+
 ## Real ADK Agent (Optional)
 
 `agent_adk.py` swaps the rule-based agent for a real `google.adk.agents.Agent`
 with `lookup_dtc` registered as a proper `FunctionTool`. Requires
 `pip install google-adk` and a `GOOGLE_API_KEY` with active Gemini quota.
+
+To use ADK mode:
+```bash
+export GOOGLE_CLOUD_PROJECT="your-project-id"
+export GOOGLE_CLOUD_LOCATION="us-central1"
+export GOOGLE_GENAI_USE_VERTEXAI=TRUE
+
+python main.py
+# Choose: 1 (Google ADK + Gemini Mode)
+```
+
+---
 
 ## Real MCP Protocol Test
 
@@ -204,6 +307,8 @@ python tests/test_mcp_client.py
 Spawns `mcp_server.py` as a subprocess and talks to it over the actual MCP
 stdio protocol (not just a direct function call) — confirms tool
 registration and both successful and "not found" lookups work end-to-end.
+
+---
 
 ## A2A Protocol — Multi-Agent Demo (Day 5)
 
@@ -243,25 +348,72 @@ python main.py
 If the Parts Agent isn't running, DiagAssist degrades gracefully — the
 diagnostic response still works, it just omits the parts estimate.
 
+---
+
 ## Screenshots
 
-> _Placeholder — add terminal screenshots or A2UI web renders here for the
-> hackathon submission._
+> Coming soon:
+> * Dashboard Home
+> * ADK Connected
+> * Diagnostic Center
+> * AI Repair Planning
+> * PDF Report
+> * Agent Activity Timeline
+> * System Status
+> * Observability Dashboard
 
 `[ Screenshot 1: CLI session showing a successful P0420 lookup ]`
 
 `[ Screenshot 2: evals.py pass/fail report ]`
 
+---
+
 ## Future Improvements
 
-- Swap the rule-based code extraction / refusal logic in `agent.py` for an
-  actual LLM call (e.g. Claude) for richer natural-language understanding,
-  while keeping the grounding constraint that all facts must come from
-  `lookup_dtc`.
-- Expand `dtc_data.json` with the full SAE J2012 DTC list, or connect to a
-  live vehicle's OBD-II port via an ELM327 adapter for real-time codes.
-- Add a real A2UI JSON schema renderer for native mobile/web display instead
-  of the current text-based card renderer.
-- Add user history/session tracking so a service advisor can review past
-  diagnostic sessions for a given vehicle.
-- Add authentication and multi-shop support for a production deployment.
+* Expand to 5,000+ manufacturer-specific DTCs
+* Live OBD-II integration using ELM327
+* Multi-vehicle diagnostic history
+* Voice-based technician assistant
+* Cloud deployment on Google Cloud Run
+* Fleet management integration
+* Predictive maintenance recommendations
+* Multi-agent repair workflow planning
+* Real-time parts inventory integration
+* Mobile technician application
+
+---
+
+## Acknowledgements
+
+This project was built using:
+
+* **Google Agent Development Kit (ADK)** – Agent orchestration framework
+* **Google Gemini** – Large language model for reasoning
+* **Google Cloud Vertex AI** – Managed API infrastructure
+* **Model Context Protocol (MCP)** – Standard tool definitions
+* **Streamlit** – Web dashboard framework
+* **SQLite** – Embedded relational database
+* **Python** – Programming language
+* **ReportLab** – PDF generation
+
+Special thanks to the **Google ADK Capstone Program** for providing the opportunity to explore autonomous agent development for real-world enterprise applications.
+
+---
+
+## License
+
+This project is released under the **MIT License**.
+
+---
+
+## Support
+
+For issues, questions, or contributions:
+- Review the `specs/technical_design.md` for detailed architecture
+- Check `skills/diagnostic-troubleshooting/SKILL.md` for agent behavior
+- Run `python tests/evals.py` to verify the system works end-to-end
+- See `agent_adk.py` for real ADK integration examples
+
+---
+
+**Built for the Google ADK Track. Production-ready autonomous agent architecture.** 🚗✨
